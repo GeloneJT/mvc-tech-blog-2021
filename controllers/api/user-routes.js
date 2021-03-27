@@ -54,7 +54,7 @@ router.post("/login", async (req, res) => {
       // TODO: SET USERNAME IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
       req.session.username = user.username;
       // TODO: SET LOGGEDIN TO TRUE IN REQUEST SESSION
-      req.req.session.logged_in = true;
+      req.session.logged_in = true;
 
       res.status(200).json({ user, message: "You are now logged in!" });
     });
