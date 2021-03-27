@@ -11,7 +11,7 @@ router.post("/", withAuth, async (req, res) => {
       ...req.body,
 
       // TODO: SET USERID TO LOGGEDIN USERID
-      user_id: req.logged_in.user_id,
+      userId: req.loggedIn.userId,
     });
     res.json(newPost);
   } catch (err) {
@@ -25,7 +25,7 @@ router.put("/:id", withAuth, async (req, res) => {
       // TODO: SET ID TO ID PARAMETER INSIDE WHERE CLAUSE CONDITION FIELD
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        userId: req.session.userId,
       },
     });
 
@@ -45,7 +45,7 @@ router.delete("/:id", withAuth, async (req, res) => {
       // TODO: SET ID TO ID PARAMETER INSIDE WHERE CLAUSE CONDITION FIELD
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        userId: req.session.userId,
       },
     });
 
