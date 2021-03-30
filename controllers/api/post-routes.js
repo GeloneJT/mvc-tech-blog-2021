@@ -11,7 +11,7 @@ router.post("/", withAuth, async (req, res) => {
       ...req.body,
 
       // TODO: SET USERID TO LOGGEDIN USERID
-      userId: req.loggedIn.userId,
+      userId: req.session.userId,
     });
     res.json(newPost);
   } catch (err) {
